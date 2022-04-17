@@ -1,0 +1,266 @@
+# This is a basic workflow to help you get started with Actionsimport requests
+import json
+import random
+import time
+
+def get_context1(): #帳號1的職業發言:波波魚(本號)
+    text = "&mine"
+    return text
+
+def chanel_list1(): #帳號1的發言頻道ID
+    text = ["865592368963387402"]
+    return text
+
+def authorization1(): #帳號1的authorization
+    text = ["NzUxNjIxMTkyMjg4NDM2Mzg1.YllZYQ.7HyE3DoopAc_b8Ml_bXvKGb_NHw"]
+    return text
+
+def get_context2(): #帳號2的職業發言:波魚礦工一號(礦工)
+    text = "&mine"
+    return text
+
+def chanel_list2(): #帳號2的發言頻道ID
+    text = ["865592368963387402"]
+    return text
+
+def authorization2(): #帳號2的authorization
+    text = ["NzU0Njg5MDIyNTY3MjUyMDA5.Yltmow.xs9YXHZ98KpjP_rLgiyG-APcH9M"]
+    return text
+
+def get_context3(): #帳號3的職業發言:波魚礦工二號(礦工)
+    text = "&mine"
+    return text
+
+def chanel_list3(): #帳號3的發言頻道ID
+    text = ["865592368963387402"]
+    return text
+
+def authorization3(): #帳號3的authorization
+    text = ["ODYxOTE4MjIwODYwMTI5MzEw.Yltm5Q.qzEa5yDzGu5DePAvyLtVvlcLpKA"]
+    return text
+
+def get_context4(): #帳號4的職業發言:波魚牧師一號(牧師)
+    text = "&herd"
+    return text
+
+def chanel_list4(): #帳號4的發言頻道ID
+    text = ["865592368963387402"]
+    return text
+
+def authorization4(): #帳號4的authorization
+    text = ["OTY0MTUyNDIzNTIwMjcyNDU1.Ylozjg._CSKWLEUeevkK2_g-u1JOAVzN0k"]
+    return text
+
+def get_context5(): #帳號5的職業發言:波魚牧師二號(牧師)
+    text = "&herd"
+    return text
+
+def chanel_list5(): #帳號5的發言頻道ID
+    text = ["865592368963387402"]
+    return text
+
+def authorization5(): #帳號5的authorization
+    text = ["OTY0ODU0MTQxNzYxNTE1NTcw.Ylqtxg.hWRmqaSn2VbcchDZ7pkfytWbqQ0"]
+    return text  
+
+def get_context6(): #帳號6的職業發言:波魚藥劑師一號(藥劑師)
+    text = "&brew"
+    return text
+
+def chanel_list6(): #帳號6的發言頻道ID
+    text = ["865592368963387402"]
+    return text
+
+def authorization6(): #帳號6的authorization
+    text = ["OTY0NDc0NjM3MjcyNjI1MTgy.Yltosg.iFqtvNFGZ_JT5wMXXvkHxCPWdok"]
+    return text  
+
+def get_context7(): #帳號7的職業發言:波魚藥劑師二號(藥劑師)
+    text = "&brew"
+    return text
+
+def chanel_list7(): #帳號7的發言頻道ID
+    text = ["865592368963387402"]
+    return text
+
+def authorization7(): #帳號7的authorization
+    text = ["OTY0NDgxODgzNTMyNTU4MzQ2.YltnEw.4CboccR9GFA02Ho6-4RSjOYh8p0"]
+    return text  
+
+
+def chat1(chanel_list,authorization_list1):
+    for authorization in authorization_list1:
+        header = {
+            "Authorization": authorization,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        }
+        for chanel_id in chanel_list:
+            msg = {
+                "content": get_context1(),
+                "nonce": "82329451214{}33232234".format(random.randrange(0, 1000)),
+                "tts": False,
+            }
+            url = "https://discord.com/api/v9/channels/{}/messages".format(chanel_id)
+            try:
+                res = requests.post(url=url, headers=header, data=json.dumps(msg))
+                print(res.content)
+            except:
+                pass
+            continue
+        time.sleep(random.randrange(1, 3))
+
+def chat2(chanel_list,authorization_list2):
+    for authorization in authorization_list2:
+        header = {
+            "Authorization": authorization,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        }
+        for chanel_id in chanel_list:
+            msg = {
+                "content": get_context2(),
+                "nonce": "82329451214{}33232234".format(random.randrange(0, 1000)),
+                "tts": False,
+            }
+            url = "https://discord.com/api/v9/channels/{}/messages".format(chanel_id)
+            try:
+                res = requests.post(url=url, headers=header, data=json.dumps(msg))
+                print(res.content)
+            except:
+                pass
+            continue
+        time.sleep(random.randrange(1, 3))
+
+def chat3(chanel_list,authorization_list3):
+    for authorization in authorization_list3:
+        header = {
+            "Authorization": authorization,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        }
+        for chanel_id in chanel_list:
+            msg = {
+                "content": get_context3(),
+                "nonce": "82329451214{}33232234".format(random.randrange(0, 1000)),
+                "tts": False,
+            }
+            url = "https://discord.com/api/v9/channels/{}/messages".format(chanel_id)
+            try:
+                res = requests.post(url=url, headers=header, data=json.dumps(msg))
+                print(res.content)
+            except:
+                pass
+            continue
+        time.sleep(random.randrange(1, 3))
+  
+def chat4(chanel_list,authorization_list4):
+    for authorization in authorization_list4:
+        header = {
+            "Authorization": authorization,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        }
+        for chanel_id in chanel_list:
+            msg = {
+                "content": get_context4(),
+                "nonce": "82329451214{}33232234".format(random.randrange(0, 1000)),
+                "tts": False,
+            }
+            url = "https://discord.com/api/v9/channels/{}/messages".format(chanel_id)
+            try:
+                res = requests.post(url=url, headers=header, data=json.dumps(msg))
+                print(res.content)
+            except:
+                pass
+            continue
+        time.sleep(random.randrange(1, 3))
+
+def chat5(chanel_list,authorization_list5):
+    for authorization in authorization_list5:
+        header = {
+            "Authorization": authorization,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        }
+        for chanel_id in chanel_list:
+            msg = {
+                "content": get_context5(),
+                "nonce": "82329451214{}33232234".format(random.randrange(0, 1000)),
+                "tts": False,
+            }
+            url = "https://discord.com/api/v9/channels/{}/messages".format(chanel_id)
+            try:
+                res = requests.post(url=url, headers=header, data=json.dumps(msg))
+                print(res.content)
+            except:
+                pass
+            continue
+        time.sleep(random.randrange(1, 3))
+
+def chat6(chanel_list,authorization_list6):
+    for authorization in authorization_list6:
+        header = {
+            "Authorization": authorization,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        }
+        for chanel_id in chanel_list:
+            msg = {
+                "content": get_context6(),
+                "nonce": "82329451214{}33232234".format(random.randrange(0, 1000)),
+                "tts": False,
+            }
+            url = "https://discord.com/api/v9/channels/{}/messages".format(chanel_id)
+            try:
+                res = requests.post(url=url, headers=header, data=json.dumps(msg))
+                print(res.content)
+            except:
+                pass
+            continue
+        time.sleep(random.randrange(1, 3))
+
+def chat7(chanel_list,authorization_list7):
+    for authorization in authorization_list7:
+        header = {
+            "Authorization": authorization,
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36",
+        }
+        for chanel_id in chanel_list:
+            msg = {
+                "content": get_context7(),
+                "nonce": "82329451214{}33232234".format(random.randrange(0, 1000)),
+                "tts": False,
+            }
+            url = "https://discord.com/api/v9/channels/{}/messages".format(chanel_id)
+            try:
+                res = requests.post(url=url, headers=header, data=json.dumps(msg))
+                print(res.content)
+            except:
+                pass
+            continue
+        time.sleep(random.randrange(1, 3))
+
+if __name__ == "__main__":
+
+    authorization_list1 = authorization1()
+    authorization_list2 = authorization2()
+    authorization_list3 = authorization3()
+    authorization_list4 = authorization4()
+    authorization_list5 = authorization5()
+    authorization_list6 = authorization6()
+    authorization_list7 = authorization7()
+    while True:
+        try:
+            chat1(chanel_list1(),authorization_list1)
+            chat2(chanel_list2(),authorization_list2)
+            chat3(chanel_list3(),authorization_list3)
+            chat4(chanel_list4(),authorization_list4)
+            chat5(chanel_list5(),authorization_list5)
+            chat6(chanel_list6(),authorization_list6)
+            chat7(chanel_list7(),authorization_list7)
+            sleeptime = 60
+            time.sleep(sleeptime)
+        except:
+            break
